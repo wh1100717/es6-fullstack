@@ -5,7 +5,7 @@ let config = {}
 config.dev = {
   web: {
     host: 'localhost',
-    port: '3002',
+    port: '3000',
     base_url: ''
   }
 }

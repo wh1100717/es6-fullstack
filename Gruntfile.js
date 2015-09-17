@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         stats: {
           colors: true
         },
-        port: 3000
+        port: 3001
       }
     },
     watch: {
@@ -31,8 +31,20 @@ module.exports = function(grunt) {
         files: './dist/public/**/*',
         tasks: ['webpack-dev-server']
       }
+    },
+    copy: {
+      main: {
+        files: [
+          {
+            expand: true,
+            cwd: 'src/server/views/',
+            src: ['**'],
+            dest: 'dist/views/'
+          }
+        ]
+      }
     }
   });
   grunt.registerTask('default', ['clean:dev', 'webpack-dev-server', 'watch']);
-  return grunt.registerTask('release', ['clean:release', 'webpack']);
+  return grunt.registerTask('release', ['clean:release', 'copy', 'webpack']);
 };

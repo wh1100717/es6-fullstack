@@ -1,11 +1,18 @@
 import 'babel/polyfill'
 import express from 'express'
+import path from 'path'
 
 import config from './entry/config'
 import expressConfig from './entry/express'
 import route from './entry/route'
 
 const app = express()
+
+// 配置静态资源文件目录
+app.use(express.static(path.join(__dirname, 'public')))
+
+// 配置views目录
+app.set('views', path.join(__dirname, 'views'))
 
 // Express初始化配置
 expressConfig(app)

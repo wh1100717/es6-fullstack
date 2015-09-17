@@ -17,11 +17,19 @@ module.exports = (grunt) ->
         historyApiFallback: true
         stats:
           colors: true
-        port: 3000
+        port: 3001
     watch:
       server:
         files: './dist/public/**/*'
         tasks: ['webpack-dev-server']
+    copy:
+      main:
+        files: [{
+          expand: true
+          cwd: 'src/server/views/'
+          src: ['**']
+          dest: 'dist/views/'
+        }]
   }
   grunt.registerTask 'default', [
     'clean:dev'
@@ -30,5 +38,6 @@ module.exports = (grunt) ->
   ]
   grunt.registerTask 'release', [
     'clean:release'
+    'copy'
     'webpack'
   ]

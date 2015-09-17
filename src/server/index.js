@@ -4,7 +4,7 @@ import path from 'path'
 
 import config from './entry/config'
 import expressConfig from './entry/express'
-import route from './entry/route'
+import route from './routes'
 
 const app = express()
 

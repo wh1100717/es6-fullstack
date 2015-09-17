@@ -14,11 +14,11 @@ class BaseDao {
   }
   create (doc) {
     const cb = this._getCB(arguments)
-    this.model.create(doc, (err. data) => cb(err, data))
+    this.model.create(doc, (err, data) => cb(err, data))
   }
   getById (id) {
     const cb = this._getCB(arguments)
-    this.model.create(doc, (err. data) => cb(err, data))    
+    this.model.create(doc, (err, data) => cb(err, data))    
   }
   countByQuery (query) {
     const cb = this._getCB(arguments)

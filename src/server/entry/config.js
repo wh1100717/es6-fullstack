@@ -15,6 +15,11 @@ config.dev = {
     password: 'your.mysql.password',
     database: 'your.mysql.dbName',
     charset: 'utf8'
+  },
+  mongo: {
+    url: 'your.mongo.url',
+    db: 'your.mongo.db',
+    collection: 'your.mongo.collection'
   }
 }
 
@@ -31,6 +36,11 @@ config.release = {
     password: 'your.mysql.password',
     database: 'your.mysql.dbName',
     charset: 'utf8'
+  },
+  mongo: {
+    url: 'your.mongo.url',
+    db: 'your.mongo.db',
+    collection: 'your.mongo.collection'
   }
 }
 

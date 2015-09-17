@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     'webpack-dev-server': {
       app: {
         webpack: webpackConfig.generateAppConfig(true),
-        publicPath: '/public/',
+        publicPath: '/',
         hot: true,
         historyApiFallback: true,
         stats: {

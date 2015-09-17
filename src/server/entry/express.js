@@ -8,4 +8,11 @@ export default app => {
   app.use(bodyParser.json())
   app.use(cors({exposedHeaders: ['Qutke-Auth']}))
   app.set('view engine', 'jade')
+  const debug = process.env.NODE_ENV !== 'release' ? true : false
+  app.config = {
+    debug: debug,
+    base: debug ? 'http://localhost:3001/' : '/'
+  }
+
+
 }

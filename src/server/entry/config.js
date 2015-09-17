@@ -26,7 +26,7 @@ config.dev = {
 config.release = {
   web: {
     host: 'localhost',
-    port: '80',
+    port: '8080',
     base_url: ''
   },
   myslq: {

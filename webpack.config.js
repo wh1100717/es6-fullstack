@@ -55,10 +55,10 @@ generateAppConfig = (function(_this) {
     config = generateConfig(DEBUG);
     if (DEBUG) {
       appConfig = _.assign({}, config, {
-        entry: ['webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server', './src/app/index.js'],
+        entry: ['webpack-dev-server/client?http://localhost:3001', 'webpack/hot/only-dev-server', './src/app/index.js'],
         output: {
           path: path.join(__dirname, './dist/public'),
-          publicPath: '/publis/',
+          publicPath: '/',
           filename: 'app.js'
         },
         plugins: _.union(config.plugins, [new webpack.HotModuleReplacementPlugin()])
@@ -68,7 +68,7 @@ generateAppConfig = (function(_this) {
         entry: ['./src/app/index.js'],
         output: {
           path: path.join(__dirname, './dist/public'),
-          publicPath: '/publis/',
+          publicPath: '/',
           filename: 'app.js'
         },
         plugins: _.union(config.plugins, [
@@ -91,10 +91,7 @@ generateServerConfig = (function(_this) {
       DEBUG = true;
     }
     GLOBALS = {
-      'process.env.NODE_ENV': DEBUG != null ? DEBUG : {
-        '"development"': '"production"',
-        '__DEV__': DEBUG
-      }
+      '__DEV__': DEBUG
     };
     config = generateConfig(DEBUG);
     serverConfig = _.assign({}, config, {

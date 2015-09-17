@@ -46,7 +46,7 @@
   },
   "scripts": {
     "dev-server": "nodemon --watch ./src/server -x 'babel-node ./src/server/index.js'",
-    "release-server": "nodemon --watch ./dist/server.js -x 'babel-node ./dist/server.js'",
+    "release-server": "NODE_ENV=release nodemon --watch ./dist/server.js -x 'babel-node ./dist/server.js'",
     "start": "grunt & npm run dev-server",
     "build": "grunt release",
     "server": "npm run build && npm run release-server",

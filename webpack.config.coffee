@@ -36,15 +36,15 @@ generateAppConfig = (DEBUG = true) =>
   if DEBUG
     appConfig = _.assign {}, config, {
       entry: [
-        # 在页面中自动增加http://localhost:3000/webpack-dev-server.js，可以检测目前webpack的运行情况
-        'webpack-dev-server/client?http://localhost:3000'
+        # 在页面中自动增加http://localhost:3001/webpack-dev-server.js，可以检测目前webpack的运行情况
+        'webpack-dev-server/client?http://localhost:3001'
         # 其做用是当源码发生修改以后可以live reloads
         'webpack/hot/only-dev-server'
         './src/app/index.js'
       ]
       output: {
         path: path.join __dirname, './dist/public'
-        publicPath: '/publis/'
+        publicPath: '/'
         filename: 'app.js'
       }
       plugins: _.union config.plugins, [new webpack.HotModuleReplacementPlugin()]
@@ -54,7 +54,7 @@ generateAppConfig = (DEBUG = true) =>
       entry: ['./src/app/index.js']
       output: {
         path: path.join __dirname, './dist/public'
-        publicPath: '/publis/'
+        publicPath: '/'
         filename: 'app.js'
       }
       plugins: _.union config.plugins, [
@@ -67,7 +67,6 @@ generateAppConfig = (DEBUG = true) =>
 
 generateServerConfig = (DEBUG = true) =>
   GLOBALS = {
-    'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
     '__DEV__': DEBUG
   }
 

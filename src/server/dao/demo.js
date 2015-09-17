@@ -1,4 +1,4 @@
-import BaseDao from './base'
-import {DemoModel} from './model'
+import MongoBase from './mongoBase'
+import {demoModel} from './model'
 
-export default new BaseDao(DemoModel)
+export default new MongoBase(demoModel)

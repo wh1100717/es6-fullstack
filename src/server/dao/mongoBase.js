@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-class BaseDao {
+class MongoBase {
   constructor (model) {
     this.model = model
   }
@@ -42,4 +42,4 @@ class BaseDao {
   }
 }
 
-export default BaseDao
+export default MongoBase

@@ -7,6 +7,14 @@ config.dev = {
     host: 'localhost',
     port: '3000',
     base_url: ''
+  },
+  myslq: {
+    host: 'your.mysql.host',
+    port: 'your.mysql.port',
+    user: 'your.mysql.username',
+    password: 'your.mysql.password',
+    database: 'your.mysql.dbName',
+    charset: 'utf8'
   }
 }
 
@@ -15,7 +23,15 @@ config.release = {
     host: 'localhost',
     port: '80',
     base_url: ''
-  }  
+  },
+  myslq: {
+    host: 'your.mysql.host',
+    port: 'your.mysql.port',
+    user: 'your.mysql.username',
+    password: 'your.mysql.password',
+    database: 'your.mysql.dbName',
+    charset: 'utf8'
+  }
 }
 
 export default config[env]

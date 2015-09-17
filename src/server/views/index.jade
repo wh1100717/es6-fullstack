@@ -1,3 +1,5 @@
-h1 Welcome to the Index Page
-h2 It is under #{config.debug ? 'debug' : 'release'} mode ~~
-script(src='#{config.base}app.js')
+extends layout/default.jade
+
+block content
+  h1 Welcome to the Index Page
+  h2 It is under #{config.debug ? 'debug' : 'release'} mode ~~~

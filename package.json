@@ -45,8 +45,8 @@
     "webpack-dev-server": "^1.9.0"
   },
   "scripts": {
-    "dev-server": "nodemon --watch ./src/server -x 'babel-node ./src/server/index.js'",
-    "release-server": "NODE_ENV=release nodemon --watch ./dist/server.js -x 'babel-node ./dist/server.js'",
+    "dev-server": "nodemon -e jade -w ./src/server -x 'babel-node ./src/server/index.js'",
+    "release-server": "NODE_ENV=release nodemon -e jade -w ./dist/server.js -x 'babel-node ./dist/server.js'",
     "start": "grunt & npm run dev-server",
     "build": "grunt release",
     "server": "npm run build && npm run release-server",

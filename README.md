@@ -1,4 +1,4 @@
-## ES6 fullstack
+## ES7 fullstack
 
 ==============
 

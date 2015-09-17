@@ -13,6 +13,4 @@ export default app => {
     debug: debug,
     base: debug ? 'http://localhost:3001/' : '/'
   }
-
-
 }
